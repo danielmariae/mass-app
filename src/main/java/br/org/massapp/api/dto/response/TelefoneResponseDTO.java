@@ -1,6 +1,6 @@
 package br.org.massapp.api.dto.response;
 
-import br.org.massapp.api.model.Telefone;
+import br.org.massapp.api.model.common.Telefone;
 
 public record TelefoneResponseDTO(
     Long id,

@@ -1,5 +1,6 @@
 package br.org.massapp.api.model;
 
+import br.org.massapp.api.model.common.Contato;
 import jakarta.persistence.Entity;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -7,7 +8,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Telefone extends DefaultEntity {
-    private int ddd;
-    private String numero;
+public class Clerigo extends Contato {
+    private String tipoClerigo;
+    private String ordemCarisma;
 }

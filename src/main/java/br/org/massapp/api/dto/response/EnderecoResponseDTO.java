@@ -1,6 +1,6 @@
 package br.org.massapp.api.dto.response;
 
-import br.org.massapp.api.model.Endereco;
+import br.org.massapp.api.model.common.Endereco;
 
 public record EnderecoResponseDTO(
     Long id,

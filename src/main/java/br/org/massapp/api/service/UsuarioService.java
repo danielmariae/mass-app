@@ -9,9 +9,9 @@ import java.nio.file.StandardCopyOption;
 
 import br.org.massapp.api.dto.request.UsuarioDTO;
 import br.org.massapp.api.dto.response.UsuarioResponseDTO;
-import br.org.massapp.api.model.Endereco;
-import br.org.massapp.api.model.Telefone;
 import br.org.massapp.api.model.Usuario;
+import br.org.massapp.api.model.common.Endereco;
+import br.org.massapp.api.model.common.Telefone;
 import br.org.massapp.api.repository.UsuarioRepository;
 import br.org.massapp.api.service.security.HashService;
 

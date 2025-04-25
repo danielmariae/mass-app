@@ -1,4 +1,4 @@
-package br.org.massapp.api.model;
+package br.org.massapp.api.model.common;
 
 import jakarta.persistence.Entity;
 import lombok.Data;
