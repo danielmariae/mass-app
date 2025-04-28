@@ -40,6 +40,15 @@ public class Local extends DefaultEntity {
     private Telefone telefone;
 
     // Implementar missas, confissões, atendimentos.
+    @OneToMany(mappedBy = "local")
+    private List<Missa> missas;
+
+    @OneToMany(mappedBy = "local")
+    private List<Confissao> confissoes;
+
+    @OneToMany(mappedBy = "local")
+    private List<Atendimento> atendimentos;
+
     private String linkInstagram;
     private String linkFacebook;
     private String linkYoutube;

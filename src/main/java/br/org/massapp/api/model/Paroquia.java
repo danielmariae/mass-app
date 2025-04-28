@@ -47,11 +47,11 @@ public class Paroquia extends DefaultEntity {
     )
     private List<HorarioFuncionamento> horariosFuncionamento;
 
-    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.REFRESH}, orphanRemoval = false)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = false)
     @JoinColumn(name = "clerigo_paroco")
     private Clerigo paroco;
 
-    @OneToMany(cascade = {CascadeType.DETACH, CascadeType.REFRESH}, orphanRemoval = false)
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = false)
     @JoinTable(
         name = "paroquia_auxiliares",
         joinColumns = @JoinColumn(name = "paroquia_id"),
@@ -59,7 +59,7 @@ public class Paroquia extends DefaultEntity {
     )
     private List<Clerigo> auxiliares;
 
-    @OneToOne(cascade = {CascadeType.DETACH, CascadeType.REFRESH}, orphanRemoval = false)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = false)
     @JoinColumn(name = "contato_responsavel")
     private Contato responsavel;
 
@@ -72,6 +72,16 @@ public class Paroquia extends DefaultEntity {
     private Telefone telefone;
 
     // Implementar missas, confissões, atendimentos.
+
+    @OneToMany(mappedBy = "paroquia")
+    private List<Missa> missas;
+
+    @OneToMany(mappedBy = "paroquia")
+    private List<Confissao> confissoes;
+
+    @OneToMany(mappedBy = "paroquia")
+    private List<Atendimento> atendimentos;
+
     private String linkInstagram;
     private String linkFacebook;
     private String linkYoutube;

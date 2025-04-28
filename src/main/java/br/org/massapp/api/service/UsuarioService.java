@@ -6,6 +6,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import br.org.massapp.api.dto.request.UsuarioDTO;
 import br.org.massapp.api.dto.response.UsuarioResponseDTO;
@@ -104,6 +106,22 @@ public class UsuarioService {
         // Panache.delete("telefone_id = ?1", tel.getId());
     }
     
+    public List<UsuarioResponseDTO> getAllUsers(){
+        List<Usuario> users = userRepository.listAll();
+        return users.stream()
+                    .map(UsuarioResponseDTO::valueOf)
+                    .collect(Collectors.toList());
+    }
+    
+    public UsuarioResponseDTO getUsuarioById(Long id){
+        Usuario user = userRepository.findById(id);
+
+        if(user == null){
+            throw new NotFoundException("Usuário não encontrado.");
+        }
+
+        return UsuarioResponseDTO.valueOf(user);
+    }
 
     @Transactional
     public String salvarImagem(Long userId, FileUpload imagem) throws IOException{
@@ -113,20 +131,15 @@ public class UsuarioService {
         }
 
         String nomeArquivo = userId + "_" + imagem.fileName();
-        String caminhoImagem = "uploads/" + nomeArquivo;
+        String caminhoImagem = "uploads/users/" + nomeArquivo;
         
-        Files.createDirectories(Paths.get("uploads"));
+        Files.createDirectories(Paths.get("uploads/users"));
         Files.copy(imagem.uploadedFile(), Paths.get(caminhoImagem), StandardCopyOption.REPLACE_EXISTING);
 
         usuario.setFotoPerfilPath(caminhoImagem);
         return caminhoImagem;
     }
-
-    public UsuarioResponseDTO getUsuarioById(Long id){
-        Usuario user = userRepository.findById(id);    
-        return UsuarioResponseDTO.valueOf(user);
-    }
-
+    
     public File obterArquivoImagem(Long usuarioId) {
         Usuario usuario = userRepository.findById(usuarioId);
         if (usuario == null || usuario.getFotoPerfilPath() == null) {

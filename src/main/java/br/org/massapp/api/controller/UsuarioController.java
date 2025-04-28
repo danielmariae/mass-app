@@ -2,6 +2,7 @@ package br.org.massapp.api.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.jboss.resteasy.reactive.multipart.FileUpload;
 
@@ -74,6 +75,13 @@ public class UsuarioController {
         UsuarioResponseDTO response = service.getUsuarioById(id);
         return Response.ok(response).build();
     }
+
+    @GET
+    public Response getUsuarios(){
+        List<UsuarioResponseDTO> response = service.getAllUsers();
+        return Response.ok(response).build();
+    }
+
 
     @GET
     @Path("/download/imagem/{id}")

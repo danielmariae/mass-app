@@ -10,7 +10,7 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Contato extends DefaultEntity{
+public class Contato extends DefaultEntity {
     private String nome;
     private String email;
     private String cargo;

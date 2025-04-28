@@ -1,10 +1,8 @@
 package br.org.massapp.api.service.security;
 
 import java.util.Base64;
-
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
-
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped

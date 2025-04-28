@@ -32,7 +32,7 @@ public class Comunidade extends DefaultEntity {
     )
     private List<Evento> eventos;
 
-    @OneToOne(cascade = CascadeType.DETACH)
+    @OneToOne
     @JoinColumn(name = "contato_id")
     private Contato contato;
     
@@ -43,6 +43,15 @@ public class Comunidade extends DefaultEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "telefone_id")
     private Telefone telefone;
+
+    @OneToMany(mappedBy = "comunidade")
+    private List<Missa> missas;
+
+    @OneToMany(mappedBy = "comunidade")
+    private List<Confissao> confissoes;
+
+    @OneToMany(mappedBy = "comunidade")
+    private List<Atendimento> atendimentos;
 
     // Implementar missas, confissões, atendimentos.
     private String linkInstagram;
