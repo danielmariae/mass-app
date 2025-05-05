@@ -1,34 +1,34 @@
 -- Inserir em Endereco
-insert into Endereco (id, UF, bairro, cep, complemento, localidade, logradouro, numeroLote, dataHoraAtualizacao, dataHoraCriacao)
-values (1, 'SP', 'Centro', '01000-000', 'Apto 101', 'São Paulo', 'Rua Exemplo', '123', current_timestamp, current_timestamp);
+insert into Endereco (UF, bairro, cep, complemento, localidade, logradouro, numeroLote, dataHoraAtualizacao, dataHoraCriacao)
+values ('SP', 'Centro', '01000-000', 'Apto 101', 'São Paulo', 'Rua Exemplo', '123', current_timestamp, current_timestamp);
 
 -- Inserir em Telefone
-insert into Telefone (id, ddd, numero, dataHoraAtualizacao, dataHoraCriacao)
-values (1, 11, '99999-9999', current_timestamp, current_timestamp);
+insert into Telefone (ddd, numero, dataHoraAtualizacao, dataHoraCriacao)
+values (11, '99999-9999', current_timestamp, current_timestamp);
 
 -- Inserir em Contato
-insert into Contato (id, endereco_id, telefone_id, nome, email, cargo, dataHoraAtualizacao, dataHoraCriacao)
-values (1, 1, 1, 'Contato Teste', 'contato@teste.com', 'Responsável', current_timestamp, current_timestamp);
+insert into Contato (endereco_id, telefone_id, nome, email, cargo, dataHoraAtualizacao, dataHoraCriacao)
+values (1, 1, 'Contato Teste', 'contato@teste.com', 'Responsável', current_timestamp, current_timestamp);
 
 -- Inserir em Clerigo
-insert into Clerigo (id, endereco_id, telefone_id, nome, email, ordemCarisma, tipoClerigo, dataHoraAtualizacao, dataHoraCriacao)
-values (1, 1, 1, 'Pe. João', 'pejoao@igreja.com', 'Franciscano', 'PADRE', current_timestamp, current_timestamp);
+insert into Clerigo (endereco_id, telefone_id, nome, email, ordemCarisma, tipoClerigo, dataHoraAtualizacao, dataHoraCriacao)
+values (1, 1, 'Pe. João', 'pejoao@igreja.com', 'Franciscano', 'PADRE', current_timestamp, current_timestamp);
 
 -- Inserir em Comunidade
-insert into Comunidade (id, contato_id, endereco_id, telefone_id, nome, descricao, linkFacebook, linkInstagram, linkYoutube, dataFundacao, dataHoraAtualizacao, dataHoraCriacao)
-values (1, 1, 1, 1, 'Comunidade São José', 'Comunidade Católica', 'fb.com/comunidade', 'instagram.com/comunidade', 'youtube.com/comunidade', current_timestamp, current_timestamp, current_timestamp);
+insert into Comunidade (contato_id, endereco_id, telefone_id, nome, descricao, linkFacebook, linkInstagram, linkYoutube, dataFundacao, dataHoraAtualizacao, dataHoraCriacao)
+values (1, 1, 1, 'Comunidade São José', 'Comunidade Católica', 'fb.com/comunidade', 'instagram.com/comunidade', 'youtube.com/comunidade', current_timestamp, current_timestamp, current_timestamp);
 
 -- Inserir em HorarioFuncionamento
-insert into HorarioFuncionamento (id, diaDaSemana, horarioAbertura, horarioFechamento, dataHoraAtualizacao, dataHoraCriacao)
-values (1, 'DOMINGO', '08:00:00', '18:00:00', current_timestamp, current_timestamp);
+insert into HorarioFuncionamento (diaDaSemana, horarioAbertura, horarioFechamento, dataHoraAtualizacao, dataHoraCriacao)
+values ('DOMINGO', '08:00:00', '18:00:00', current_timestamp, current_timestamp);
 
 -- Inserir em Local
-insert into Local (id, endereco_id, telefone_id, nome, linkFacebook, linkInstagram, linkYoutube, dataFundacao, dataHoraAtualizacao, dataHoraCriacao)
-values (1, 1, 1, 'Salão Paroquial', 'fb.com/salao', 'instagram.com/salao', 'youtube.com/salao', current_date, current_timestamp, current_timestamp);
+insert into Local (endereco_id, telefone_id, nome, linkFacebook, linkInstagram, linkYoutube, dataFundacao, dataHoraAtualizacao, dataHoraCriacao)
+values (1, 1, 'Salão Paroquial', 'fb.com/salao', 'instagram.com/salao', 'youtube.com/salao', current_date, current_timestamp, current_timestamp);
 
 -- Inserir em Paroquia
-insert into Paroquia (id, clerigo_paroco, contato_responsavel, endereco_id, telefone_id, nome, descricao, linkFacebook, linkInstagram, linkYoutube, dataHoraAtualizacao, dataHoraCriacao)
-values (1, 1, 1, 1, 1, 'Paróquia Santa Maria', 'Paróquia no centro da cidade', 'fb.com/paroquia', 'instagram.com/paroquia', 'youtube.com/paroquia', current_timestamp, current_timestamp);
+insert into Paroquia (clerigo_paroco, contato_responsavel, endereco_id, telefone_id, nome, descricao, linkFacebook, linkInstagram, linkYoutube, dataHoraAtualizacao, dataHoraCriacao)
+values (1, 1, 1, 1, 'Paróquia Santa Maria', 'Paróquia no centro da cidade', 'fb.com/paroquia', 'instagram.com/paroquia', 'youtube.com/paroquia', current_timestamp, current_timestamp);
 
 -- Inserir em Usuario
 insert into Usuario (endereco_id, telefone_id, nome, email, fotoPerfilPath, senha, pertenca, dataHoraAtualizacao, dataHoraCriacao)

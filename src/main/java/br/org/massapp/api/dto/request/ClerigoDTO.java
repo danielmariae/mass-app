@@ -1,10 +1,15 @@
 package br.org.massapp.api.dto.request;
 
-import br.org.massapp.api.model.enums.TipoClerigo;
+import br.org.massapp.api.dto.enums.TipoClerigoDTO;
+import jakarta.validation.Valid;
 
 public record ClerigoDTO(
     String nome,
-    String email
+    String email,
+    TipoClerigoDTO tipoClerigo,
+    String ordemCarisma,
+    @Valid TelefoneDTO telefone,
+    @Valid EnderecoDTO endereco
 ) {
-    
+
 }

@@ -3,7 +3,9 @@ package br.org.massapp.api.app.error.global;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.ws.rs.NotFoundException;
+import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
+import jakarta.ws.rs.core.UriInfo;
 import jakarta.ws.rs.ext.ExceptionMapper;
 import jakarta.ws.rs.ext.Provider;
 import java.time.LocalDateTime;
@@ -16,6 +18,9 @@ import br.org.massapp.api.app.error.mock.ErrorResponse;
 
 @Provider
 public class GlobalExceptionHandler implements ExceptionMapper<Exception> {
+
+    @Context
+    UriInfo uriInfo;
 
     @Override
     public Response toResponse(Exception exception) {
@@ -81,7 +86,7 @@ public class GlobalExceptionHandler implements ExceptionMapper<Exception> {
             Response.Status.INTERNAL_SERVER_ERROR.getStatusCode(),
             new ErrorPayload(
                 "INTERNAL_ERROR",
-                "Ocorreu um erro inesperado no servidor",
+                "Ocorreu um erro inesperado no servidor: "+ex.getLocalizedMessage(),
                 null,
                 LocalDateTime.now(),
                 getRequestPath()
@@ -94,12 +99,8 @@ public class GlobalExceptionHandler implements ExceptionMapper<Exception> {
             .build();
     }
 
-    // Obtém o path da requisição (simplificado)
+    // Obtém o path da requisição
     private String getRequestPath() {
-        return jakarta.ws.rs.core.UriInfo.class.cast(
-            jakarta.ws.rs.core.SecurityContext.class.cast(
-                jakarta.ws.rs.core.Context.class.cast(null)
-            )
-        ).getPath();
+        return uriInfo != null ? uriInfo.getPath() : "unknown";
     }
 }

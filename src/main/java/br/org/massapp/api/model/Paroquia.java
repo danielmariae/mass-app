@@ -59,7 +59,7 @@ public class Paroquia extends DefaultEntity {
     )
     private List<Clerigo> auxiliares;
 
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = false)
+    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "contato_responsavel")
     private Contato responsavel;
 
@@ -70,8 +70,6 @@ public class Paroquia extends DefaultEntity {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "telefone_id")
     private Telefone telefone;
-
-    // Implementar missas, confissões, atendimentos.
 
     @OneToMany(mappedBy = "paroquia")
     private List<Missa> missas;
