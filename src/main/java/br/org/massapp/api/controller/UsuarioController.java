@@ -6,8 +6,8 @@ import java.util.List;
 
 import org.jboss.resteasy.reactive.multipart.FileUpload;
 
-import br.org.massapp.api.dto.request.UsuarioDTO;
-import br.org.massapp.api.dto.response.UsuarioResponseDTO;
+import br.org.massapp.api.dto.usuario.UsuarioDTO;
+import br.org.massapp.api.dto.usuario.UsuarioResponseDTO;
 import br.org.massapp.api.service.UsuarioService;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;

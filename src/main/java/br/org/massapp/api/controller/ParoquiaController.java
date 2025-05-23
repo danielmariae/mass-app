@@ -2,8 +2,8 @@ package br.org.massapp.api.controller;
 
 import java.util.List;
 
-import br.org.massapp.api.dto.request.ParoquiaDTO;
-import br.org.massapp.api.dto.response.ParoquiaResponseDTO;
+import br.org.massapp.api.dto.paroquia.ParoquiaDTO;
+import br.org.massapp.api.dto.paroquia.ParoquiaResponseDTO;
 import br.org.massapp.api.service.ParoquiaService;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;

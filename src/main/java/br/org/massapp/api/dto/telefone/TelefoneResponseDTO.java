@@ -1,4 +1,4 @@
-package br.org.massapp.api.dto.response;
+package br.org.massapp.api.dto.telefone;
 
 import br.org.massapp.api.model.common.Telefone;
 

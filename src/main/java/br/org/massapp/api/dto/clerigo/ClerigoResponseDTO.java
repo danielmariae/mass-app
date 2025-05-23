@@ -1,7 +1,9 @@
-package br.org.massapp.api.dto.response;
+package br.org.massapp.api.dto.clerigo;
 
+import br.org.massapp.api.dto.endereco.EnderecoResponseDTO;
 import br.org.massapp.api.dto.enums.TipoClerigoDTO;
-import br.org.massapp.api.model.Clerigo;
+import br.org.massapp.api.dto.telefone.TelefoneResponseDTO;
+import br.org.massapp.api.model.clerigo.Clerigo;
 
 public record ClerigoResponseDTO(
     Long id,

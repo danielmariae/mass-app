@@ -1,37 +1,32 @@
-package br.org.massapp.api.model;
+package br.org.massapp.api.model.missa;
 
 import java.time.LocalTime;
 
-import br.org.massapp.api.model.common.Contato;
 import br.org.massapp.api.model.common.DefaultEntity;
+import br.org.massapp.api.model.comunidade.Comunidade;
 import br.org.massapp.api.model.enums.DiaDaSemana;
-import jakarta.persistence.CascadeType;
+import br.org.massapp.api.model.local.Local;
+import br.org.massapp.api.model.paroquia.Paroquia;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Confissao extends DefaultEntity {
+public class Missa extends DefaultEntity{
     @Enumerated(EnumType.STRING)
-    private DiaDaSemana diaDaSemana;
-    private LocalTime horarioInicio;
-    private LocalTime horarioFim;
-    private Boolean agendamento;
+    private DiaDaSemana dia;
+    private LocalTime horario;
+    // É de X em X tempo?
+    private Boolean sazonal;
     private String frequencia;
     private String observacao;
-
-
-    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = false)
-    @JoinColumn(name = "contato_id")
-    private Contato contatoParaAgendamento;
-
+    
     @ManyToOne(optional = true)
     @JoinColumn(name = "paroquia_id")
     private Paroquia paroquia;
@@ -43,4 +38,5 @@ public class Confissao extends DefaultEntity {
     @ManyToOne(optional = true)
     @JoinColumn(name = "local_id")
     private Local local;
+
 }

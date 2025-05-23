@@ -2,8 +2,8 @@ package br.org.massapp.api.controller;
 
 import java.util.List;
 
-import br.org.massapp.api.dto.request.ClerigoDTO;
-import br.org.massapp.api.dto.response.ClerigoResponseDTO;
+import br.org.massapp.api.dto.clerigo.ClerigoDTO;
+import br.org.massapp.api.dto.clerigo.ClerigoResponseDTO;
 import br.org.massapp.api.service.ClerigoService;
 import jakarta.inject.Inject;
 import jakarta.validation.Valid;

@@ -1,12 +1,15 @@
-package br.org.massapp.api.model;
+package br.org.massapp.api.model.local;
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
-import br.org.massapp.api.model.common.Contato;
+import br.org.massapp.api.model.atendimento.Atendimento;
 import br.org.massapp.api.model.common.DefaultEntity;
 import br.org.massapp.api.model.common.Endereco;
+import br.org.massapp.api.model.common.HorarioFuncionamento;
 import br.org.massapp.api.model.common.Telefone;
+import br.org.massapp.api.model.confissao.Confissao;
+import br.org.massapp.api.model.missa.Missa;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -19,23 +22,18 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Comunidade extends DefaultEntity {
+public class Local extends DefaultEntity {
     private String nome;
-    private Date dataFundacao;
-    private String descricao;
-    
+    private LocalDate dataFundacao;
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(
-        name = "comunidade_evento",
-        joinColumns = @JoinColumn(name = "comunidade_id"),
-        inverseJoinColumns = @JoinColumn(name = "evento_id")
+        name = "local_horario",
+        joinColumns = @JoinColumn(name = "local_id"),
+        inverseJoinColumns = @JoinColumn(name = "horario_id")
     )
-    private List<Evento> eventos;
+    private List<HorarioFuncionamento> horariosFuncionamento;
 
-    @OneToOne
-    @JoinColumn(name = "contato_id")
-    private Contato contato;
-    
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
@@ -44,16 +42,16 @@ public class Comunidade extends DefaultEntity {
     @JoinColumn(name = "telefone_id")
     private Telefone telefone;
 
-    @OneToMany(mappedBy = "comunidade")
+    // Implementar missas, confissões, atendimentos.
+    @OneToMany(mappedBy = "local")
     private List<Missa> missas;
 
-    @OneToMany(mappedBy = "comunidade")
+    @OneToMany(mappedBy = "local")
     private List<Confissao> confissoes;
 
-    @OneToMany(mappedBy = "comunidade")
+    @OneToMany(mappedBy = "local")
     private List<Atendimento> atendimentos;
 
-    // Implementar missas, confissões, atendimentos.
     private String linkInstagram;
     private String linkFacebook;
     private String linkYoutube;

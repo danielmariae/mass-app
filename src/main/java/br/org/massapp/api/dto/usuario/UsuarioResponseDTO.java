@@ -1,5 +1,7 @@
-package br.org.massapp.api.dto.response;
-import br.org.massapp.api.model.Usuario;
+package br.org.massapp.api.dto.usuario;
+import br.org.massapp.api.dto.endereco.EnderecoResponseDTO;
+import br.org.massapp.api.dto.telefone.TelefoneResponseDTO;
+import br.org.massapp.api.model.usuario.Usuario;
 
 public record UsuarioResponseDTO(
     Long id,

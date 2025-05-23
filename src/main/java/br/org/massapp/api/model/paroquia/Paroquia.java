@@ -1,12 +1,18 @@
-package br.org.massapp.api.model;
+package br.org.massapp.api.model.paroquia;
 
 import java.util.List;
 
+import br.org.massapp.api.model.atendimento.Atendimento;
+import br.org.massapp.api.model.clerigo.Clerigo;
 import br.org.massapp.api.model.common.Contato;
 import br.org.massapp.api.model.common.DefaultEntity;
 import br.org.massapp.api.model.common.Endereco;
 import br.org.massapp.api.model.common.HorarioFuncionamento;
 import br.org.massapp.api.model.common.Telefone;
+import br.org.massapp.api.model.comunidade.Comunidade;
+import br.org.massapp.api.model.confissao.Confissao;
+import br.org.massapp.api.model.evento.Evento;
+import br.org.massapp.api.model.missa.Missa;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;

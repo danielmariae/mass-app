@@ -1,4 +1,4 @@
-package br.org.massapp.api.dto.request;
+package br.org.massapp.api.dto.telefone;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

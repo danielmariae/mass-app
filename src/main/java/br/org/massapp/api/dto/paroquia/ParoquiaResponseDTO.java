@@ -1,9 +1,13 @@
-package br.org.massapp.api.dto.response;
+package br.org.massapp.api.dto.paroquia;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.org.massapp.api.model.Paroquia;
+import br.org.massapp.api.dto.contato.ContatoResponseDTO;
+import br.org.massapp.api.dto.endereco.EnderecoResponseDTO;
+import br.org.massapp.api.dto.horariofuncionamento.HorarioFuncionamentoResponseDTO;
+import br.org.massapp.api.dto.telefone.TelefoneResponseDTO;
+import br.org.massapp.api.model.paroquia.Paroquia;
 
 public record ParoquiaResponseDTO(
     Long id,

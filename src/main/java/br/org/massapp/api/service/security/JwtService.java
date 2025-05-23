@@ -5,7 +5,7 @@ import java.time.Instant;
 import java.util.HashSet;
 import java.util.Set;
 
-import br.org.massapp.api.dto.response.UsuarioResponseDTO;
+import br.org.massapp.api.dto.usuario.UsuarioResponseDTO;
 import io.smallrye.jwt.build.Jwt;
 import jakarta.enterprise.context.ApplicationScoped;
 
@@ -17,7 +17,7 @@ public class JwtService {
         Instant now = Instant.now();
             Instant expiryDate = now.plus(EXPIRATION_TIME);
     
-            Set<String> roles = new HashSet<String>();
+            Set<String> roles = new HashSet<>();
             roles.add("User");
     
             return Jwt.issuer("handmaxx-jwt")

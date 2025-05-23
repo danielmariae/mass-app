@@ -1,5 +1,7 @@
-package br.org.massapp.api.dto.response;
+package br.org.massapp.api.dto.contato;
 
+import br.org.massapp.api.dto.endereco.EnderecoResponseDTO;
+import br.org.massapp.api.dto.telefone.TelefoneResponseDTO;
 import br.org.massapp.api.model.common.Contato;
 
 public record ContatoResponseDTO(

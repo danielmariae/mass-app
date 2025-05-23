@@ -1,5 +1,7 @@
-package br.org.massapp.api.dto.request;
+package br.org.massapp.api.dto.contato;
 
+import br.org.massapp.api.dto.endereco.EnderecoDTO;
+import br.org.massapp.api.dto.telefone.TelefoneDTO;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 

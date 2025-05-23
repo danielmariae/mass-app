@@ -1,16 +1,20 @@
 package br.org.massapp.api.service.security;
 
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 import java.util.Base64;
+
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+
 import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class HashService {
 
-    private String salt = "#b_l-ah+xyz-22%";
-    private Integer iterationCount = 400;
-    private Integer keyLength = 512;
+    private final String salt = "#b_l-ah+xyz-22%";
+    private final Integer iterationCount = 400;
+    private final Integer keyLength = 512;
 
     public String getHashSenha(String senha) {
 
@@ -20,8 +24,7 @@ public class HashService {
             .getEncoded();
 
             return Base64.getEncoder().encodeToString(result);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
             throw new RuntimeException("Erro ao criar um hash.");
         }
     }

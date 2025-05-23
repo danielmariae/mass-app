@@ -3,10 +3,9 @@ package br.org.massapp.api.service;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
-import br.org.massapp.api.dto.request.ClerigoDTO;
-import br.org.massapp.api.dto.response.ClerigoResponseDTO;
-import br.org.massapp.api.model.Clerigo;
+import br.org.massapp.api.dto.clerigo.ClerigoDTO;
+import br.org.massapp.api.dto.clerigo.ClerigoResponseDTO;
+import br.org.massapp.api.model.clerigo.Clerigo;
 import br.org.massapp.api.model.common.Endereco;
 import br.org.massapp.api.model.common.Telefone;
 import br.org.massapp.api.model.enums.TipoClerigo;

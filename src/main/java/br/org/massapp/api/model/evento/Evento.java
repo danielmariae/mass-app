@@ -1,4 +1,4 @@
-package br.org.massapp.api.model;
+package br.org.massapp.api.model.evento;
 
 import java.time.LocalDateTime;
 

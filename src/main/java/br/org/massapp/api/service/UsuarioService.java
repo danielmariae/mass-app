@@ -9,11 +9,11 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import br.org.massapp.api.dto.request.UsuarioDTO;
-import br.org.massapp.api.dto.response.UsuarioResponseDTO;
-import br.org.massapp.api.model.Usuario;
+import br.org.massapp.api.dto.usuario.UsuarioDTO;
+import br.org.massapp.api.dto.usuario.UsuarioResponseDTO;
 import br.org.massapp.api.model.common.Endereco;
 import br.org.massapp.api.model.common.Telefone;
+import br.org.massapp.api.model.usuario.Usuario;
 import br.org.massapp.api.repository.UsuarioRepository;
 import br.org.massapp.api.service.security.HashService;
 

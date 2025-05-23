@@ -1,4 +1,4 @@
-package br.org.massapp.api.dto.response;
+package br.org.massapp.api.dto.endereco;
 
 import br.org.massapp.api.model.common.Endereco;
 

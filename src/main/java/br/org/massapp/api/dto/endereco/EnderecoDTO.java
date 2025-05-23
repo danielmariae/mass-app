@@ -1,4 +1,4 @@
-package br.org.massapp.api.dto.request;
+package br.org.massapp.api.dto.endereco;
 
 import jakarta.validation.constraints.NotBlank;
 

@@ -1,9 +1,12 @@
-package br.org.massapp.api.model;
+package br.org.massapp.api.model.atendimento;
 
 import java.time.LocalTime;
 
 import br.org.massapp.api.model.common.DefaultEntity;
+import br.org.massapp.api.model.comunidade.Comunidade;
 import br.org.massapp.api.model.enums.DiaDaSemana;
+import br.org.massapp.api.model.local.Local;
+import br.org.massapp.api.model.paroquia.Paroquia;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
